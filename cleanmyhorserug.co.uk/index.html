@@ -29,6 +29,31 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script> 
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(53.694279, -2.632507);
+            
+            var mapOptions = {
+                zoom: 13,
+                center: myLatlng, 
+                zoomControl: true,
+                scaleControl: false,
+                scrollwheel: false,
+                disableDoubleClickZoom: true,
+            }
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Hello World!'
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
 </head>
 
@@ -171,7 +196,7 @@
     </section>
 
     <!-- Map Section -->
-    <div id="map"></div>
+    <div id="map-canvas"></div>
 
     <!-- Footer -->
     <footer>
@@ -188,9 +213,6 @@
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script> -->
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>

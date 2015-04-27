@@ -17,6 +17,8 @@ html {
     height: 100%;
 }
 
+
+
 h1,
 h2,
 h3,
@@ -279,6 +281,13 @@ a:focus {
     margin-top: 100px;
 }
 
+
+ #map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+ }
+
 @media(min-width:767px) {
     .content-section {
         padding-top: 250px;
@@ -292,6 +301,11 @@ a:focus {
         height: 400px;
         margin-top: 250px;
     }
+
+    #map-canvas {
+    height: 400px;
+    margin-top: 250px;
+ }
 }
 
 .btn {
